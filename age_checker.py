@@ -1,7 +1,7 @@
 #### ----------------- Input -----------------
 
 # input is currently commented out, when required put it back in
-age = 18 # int(input("What is your age? "))
+age =  int(input("What is your age? "))
 
 if age >= 18:
     print("adult")

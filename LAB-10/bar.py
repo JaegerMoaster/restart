@@ -2,24 +2,30 @@
 # import required module
 import os
 # assign directory
-path_of_the_directory = '/Users/fischee/Working/java example/python/restart-first-repo'
+path_of_the_directory = '/Users/fischee/Working/java example/python/restart-first-repo/bars-exercise'
  
 # iterate over files in
 # that directory
 for filename in os.listdir(path_of_the_directory):
     file = os.path.join(path_of_the_directory,filename)
+
+    # checking if file is a directory
     if os.path.isfile(file):
         with open(file) as f:
             lines = f.readlines()
+            #print(lines)
             data = ''.join(lines)
-            print('')
-            print('File Name =',f.name)
-            print('lines =',len(lines))
-            print('Words = ',len(data.split()))
+            new_str=data.replace("Re/Start","Python is Awesome")
+
+            # only alnalyzes original files
+            if("_pythonIsShit.txt" not in filename):
+                with open(file.replace(".txt", "_pythonIsShit.txt"), 'w') as new_file:
+                    new_file.write(new_str)
+
+            print(data)
             data = ''.join(data.split())
-            print('characters = ',len(data))
-            print('')
-                #read the content of file
+            
+                
         #data = f.read()
 
         #get the length of the data
