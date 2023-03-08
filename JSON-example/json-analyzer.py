@@ -1,5 +1,6 @@
 import json
 import pandas as pd
+import matplotlib.pyplot as plt
 data=""
 
 with open("restart-first-repo/JSON-example/countries.json", "r") as read_file:
@@ -13,5 +14,8 @@ print(df[df["population"]>=38000000])
 print(len(df[df["population"]>=38000000]))
 print("Mean of latitude is: " + str(df["latitude"].mean()))
 
+
+df[df["population"]>=38000000].plot(kind='scatter', x = 'name', y = 'population')
+plt.show()
 
 #print(df.groupby(df["Strength"]).mean())
